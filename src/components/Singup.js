@@ -2,7 +2,7 @@ import React,{Component } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import axios from 'axios'
 import Navbar from "./components/navabar/Navbar"
-import './App.css';
+import './Singup.css';
 
 
 
@@ -63,8 +63,7 @@ class App extends Component{
     render(){
         return(
             <div>
-                <Navbar/>
-                {/* <div className='container'>
+                <div className='container'>
                     <div className='from-div'>
                         <form onSubmit={this.onSubmit}>
                             <input type = 'text'
@@ -98,7 +97,7 @@ class App extends Component{
                             <input type='submit' className='btn btn-danger btn-block' value='Submit'/>
                         </form>
                     </div>
-                </div> */}
+                </div>
             </div>
         );
     }
