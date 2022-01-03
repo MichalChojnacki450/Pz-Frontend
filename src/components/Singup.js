@@ -2,17 +2,7 @@ import React,{Component } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import axios from 'axios'
 import Navbar from "./components/navabar/Navbar"
-import './App.css';
-import {GoogleMap,withScriptjs,withGoogleMap} from "react-google-maps"
-
-function Map() {
-    return <GoogleMap 
-    defaultZoom={14} 
-    defaultCenter={{lat:51.10685899391002,lng:17.033597910161696}}
-    />;  
-}
-
-const WrappedMap = withScriptjs(withGoogleMap(Map));
+import './Singup.css';
 
 
 
@@ -73,16 +63,7 @@ class App extends Component{
     render(){
         return(
             <div>
-                <Navbar/>
-                <div style={{width: '100vw', height:'100vw'}}>
-        <WrappedMap 
-            googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBU_X8LRvRvKLFFhPzz8fVHQJNXxC4X_XU'}
-            loadingElement={<div style={{height:"100%"}}/>}
-            containerElement={<div style={{height:"100%"}}/>}
-            mapElement={<div style={{height:"100%"}}/>}
-        />
-    </div>
-                {/* <div className='container'>
+                <div className='container'>
                     <div className='from-div'>
                         <form onSubmit={this.onSubmit}>
                             <input type = 'text'
@@ -116,7 +97,7 @@ class App extends Component{
                             <input type='submit' className='btn btn-danger btn-block' value='Submit'/>
                         </form>
                     </div>
-                </div> */}
+                </div>
             </div>
         );
     }
