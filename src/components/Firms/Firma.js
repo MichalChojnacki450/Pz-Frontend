@@ -50,6 +50,7 @@ function Firma(){
         content=
         <div>
             <h1>{firma.data.name}</h1>
+            <p>{firma.data.favors}</p>
         </div>
     }
 

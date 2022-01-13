@@ -3,11 +3,10 @@ import axios from "axios";
 import Loader from "../loader/Loader";
 import FirmaCard from "./FirmsCard";
 import {FormControl,Form} from "react-bootstrap";
-import Favors from "./Favors";
 
-function Firms(){
+function Favors(){
     const url=`https://61d83e5de6744d0017ba89f0.mockapi.io/FirmsList/Firms`
-    const [firms,setFirms]=useState({
+    const [favors,setfavors]=useState({
         loading: false,
         data: null,
         error: false
@@ -18,21 +17,21 @@ function Firms(){
     let content = null
     
     useEffect(()=>{
-        setFirms({
+        setfavors({
             loading: true,
             data: null,
             error: false
         })
         axios.get(url)
         .then(response=>{
-            setFirms({
+            setfavors({
                 loading: false,
                 data: response.data,
                 error: false    
             })
         })
         .catch(()=>{
-            setFirms({
+            setfavors({
                 loading:false,
                 data: null,
                 error: true
@@ -40,29 +39,26 @@ function Firms(){
         })
     },[url])
     
-    if(firms.error){
+    if(favors.error){
         content=
         <p>Ther was an error please refresh or try agan later...</p>
     }
 
-    if(firms.loading){
+    if(favors.loading){
         content =<p><Loader></Loader></p>
     }
-
-    if(firms.data){
+    if(favors.data){
         content=
-        firms.data.filter((val)=>{
+        favors.data.filter((val)=>{
             if(searchTerm ===""){
-                return val
-            }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
                 return val
             }else if(val.favors.toLowerCase().includes(searchTerm.toLowerCase())){
                 return val
             }
-        }).map((firma,key)=>
+        }).map((favor,key)=>
             <div>
                 <FirmaCard
-                    firma={firma}
+                    favor={favor}
                 />
             </div>
         )
@@ -84,4 +80,4 @@ function Firms(){
         </div>
     )
 }
-export default Firms;
+export default Favors;
