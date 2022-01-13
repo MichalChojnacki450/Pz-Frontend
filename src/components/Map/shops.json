@@ -1,0 +1,195 @@
+{
+    "features":[
+        {
+            "properties": {
+                "SHOP_ID": 101,
+                "NAME": "Lody naturalne z Krzyckiej",
+                "LINK": "https://www.facebook.com/LodyZKrzyckiej/"
+            },
+            "geometry":{
+                "coordinates":[51.07460364610733, 17.00487744810811]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 102,
+                "NAME": "Lody naturalne z Krzyckiej",
+                "LINK": "https://www.facebook.com/LodyZKrzyckiej/"
+            },
+            "geometry":{
+                "coordinates":[51.07301950569764, 17.04153153001636]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 103,
+                "NAME": "Polish Lody",
+                "LINK": "https://www.facebook.com/polishlody/"
+            },
+            "geometry":{
+                "coordinates":[51.0890465241718, 17.044665531674]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 104,
+                "NAME":"Balduno Manufaktura",
+                "LINK":"https://www.facebook.com/balduno.manufaktura"
+            },
+            "geometry":{
+                "coordinates":[51.09049969886452, 17.044772658075654]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 105,
+                "NAME":"Lody Wesoła Krówka Sky Tower",
+                "LINK":"https://www.facebook.com/wesolakrowka/"
+            },
+            "geometry":{
+                "coordinates":[51.09399248228362, 17.019840745854488]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 106,
+                "NAME":"Słodka Brama",
+                "LINK":"https://visitwroclaw.eu/miejsce/slodka-brama"
+            },
+            "geometry":{
+                "coordinates":[51.1001344758722, 17.007732157631903]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 107,
+                "NAME":"Krasnolód",
+                "LINK":"https://krasnolod.pl"
+            },
+            "geometry":{
+                "coordinates":[51.10343998610468, 17.042379197513696]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 108,
+                "NAME":"Lody PRL",
+                "LINK":"https://www.facebook.com/LodyPRLWroclaw/"
+            },
+            "geometry":{
+                "coordinates":[51.103753524905095, 17.03773257222119]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 109,
+                "NAME": "Słodkie Mleko. Lody Rzemieślnicze",
+                "LINK":""
+            },
+            "geometry":{
+                "coordinates":[51.10880338347938, 17.033533865081555]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 110,
+                "NAME":"LodoWata",
+                "LINK":"https://www.facebook.com/CiachoCafe/"
+            },
+            "geometry":{
+                "coordinates":[51.108685467020834, 17.02698055831848]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 111,
+                "NAME":"Lody Barton",
+                "LINK":"http://lodybarton.pl"
+            },
+            "geometry":{
+                "coordinates":[51.109965897904395, 17.03222997307241]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 112,
+                "NAME":"Lody Baroli",
+                "LINK":"https://www.facebook.com/LodyBaroli/"
+            },
+            "geometry":{
+                "coordinates":[51.11083254550315, 17.0334945153109]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 113,
+                "NAME":"Ice rolls & Twojaczekoladka- lody tajskie, Czekoladziarnia",
+                "LINK":"https://www.facebook.com/icerollspl/"
+            },
+            "geometry":{
+                "coordinates":[51.1110160938856, 17.03395987854487]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 114,
+                "NAME":"Nice cream factory",
+                "LINK":"https://nicecream.pl"
+            },
+            "geometry":{
+                "coordinates":[51.11116477413441, 17.03368914721648]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 115,
+                "NAME":"Lodziarnia Cybulskiego 10. Lody Normalne",
+                "LINK":"https://woroniak-adam-zakad-cukierniczy.business.site"
+            },
+            "geometry":{
+                "coordinates":[51.11629872642191, 17.03202853903645]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 116,
+                "NAME":"Lodziarnia Roma",
+                "LINK":"https://lodyroma.pl"
+            },
+            "geometry":{
+                "coordinates":[51.11791684394744, 17.034350107960126]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 117,
+                "NAME":"Balduno Manufaktura",
+                "LINK":"https://www.facebook.com/balduno.manufaktura"
+            },
+            "geometry":{
+                "coordinates":[51.11637470273095, 17.041930972189444]
+            }
+            
+        },
+        {
+            "properties": {
+                "SHOP_ID": 118,
+                "NAME":"Polish Lody",
+                "LINK":"https://www.facebook.com/polishlody/"
+            },
+            "geometry":{
+                "coordinates":[51.1164786730345, 17.04192694887618]
+            }
+        },
+        {
+            "properties": {
+                "SHOP_ID": 119,
+                "NAME":"LODOVE FANTAZJE",
+                "LINK":"https://www.facebook.com/lodovefantazje/"
+            },
+            "geometry":{
+                "coordinates":[51.118979262168395, 17.04233789531468]
+            }
+        }
+    ]
+}
