@@ -3,7 +3,6 @@ import axios from "axios";
 import Loader from "../loader/Loader";
 import FirmaCard from "./FirmsCard";
 import {FormControl,Form} from "react-bootstrap";
-import Favors from "./Favors";
 
 function Firms(){
     const url=`https://61d83e5de6744d0017ba89f0.mockapi.io/FirmsList/Firms`

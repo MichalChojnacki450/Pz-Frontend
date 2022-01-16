@@ -12,7 +12,7 @@ import Firms from "../Firms/Firms";
 import Home from "../Home";
 import Maps from "../Map/Map";
 import Register from "../auth-comp/Register";
-import Favors from "../Firms/Favors";
+import Profile from "../auth-comp/Profile";
 
 export default class NavbarComp extends Component{
     
@@ -56,6 +56,9 @@ export default class NavbarComp extends Component{
                         </Route>
                         <Route path="/Register">
                             <Register/>
+                        </Route>
+                        <Route path="/Profile">
+                            <Profile/>
                         </Route>
                     </Switch>
                 </div>
