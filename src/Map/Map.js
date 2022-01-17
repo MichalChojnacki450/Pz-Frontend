@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import {GoogleMap,withScriptjs,withGoogleMap,Marker,InfoWindow} from "react-google-maps"
-import * as shopsData from './shops.json';
+import * as shopsData from "./shops.json";
 
 function Map() {
 
@@ -37,7 +37,10 @@ function Map() {
                 }}
             >
                 <div>
+                    
                     <h2>{selectedShop.properties.NAME}</h2>
+                    <p><a href={selectedShop.properties.PAGE}>Shop Page</a></p>
+                    
                     <p><a href={selectedShop.properties.LINK}>Open shop web</a></p></div>
             </InfoWindow>
         )}
@@ -51,12 +54,10 @@ export default function Maps(){
 return(
     <div style={{width: '100vw', height:'100vw'}}>
         <WrappedMap 
-            googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBU_X8LRvRvKLFFhPzz8fVHQJNXxC4X_XU'}
+            googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC07-IeUM0Hwq5d3Qlzp5v-ygzKb5RQMS4'}
             loadingElement={<div style={{height:"100%"}}/>}
             containerElement={<div style={{height:"100%"}}/>}
             mapElement={<div style={{height:"100%"}}/>}
         />
     </div>
 )}
-
-

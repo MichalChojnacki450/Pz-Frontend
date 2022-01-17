@@ -4,7 +4,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
-import AuthService from "../../Service/auth.service";
+import AuthService from "../services/auth.service";
 
 const required = value => {
   if (!value) {
@@ -46,7 +46,7 @@ const vpassword = value => {
   }
 };
 
-class Register extends Component {
+export default class Register extends Component {
   constructor(props) {
     super(props);
     this.handleRegister = this.handleRegister.bind(this);
@@ -206,4 +206,3 @@ class Register extends Component {
     );
   }
 }
-export default Register;

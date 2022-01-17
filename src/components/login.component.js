@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import AuthService from "../../Service/auth.service";
+
+import AuthService from "../services/auth.service";
 
 const required = value => {
   if (!value) {
@@ -14,24 +15,24 @@ const required = value => {
   }
 };
 
-class Login extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
-    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
-      email: "",
+      username: "",
       password: "",
       loading: false,
       message: ""
     };
   }
 
-  onChangeEmail(e) {
+  onChangeUsername(e) {
     this.setState({
-      email: e.target.value
+      username: e.target.value
     });
   }
 
@@ -52,9 +53,9 @@ class Login extends Component {
     this.form.validateAll();
 
     if (this.checkBtn.context._errors.length === 0) {
-      AuthService.login(this.state.email, this.state.password).then(
+      AuthService.login(this.state.username, this.state.password).then(
         () => {
-          // this.props.history.push("");
+          // this.props.history.push("/home");
           window.location.reload();
         },
         error => {
@@ -95,13 +96,13 @@ class Login extends Component {
             }}
           >
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="username">Username</label>
               <Input
-                type="email"
+                type="text"
                 className="form-control"
-                name="email"
-                value={this.state.email}
-                onChange={this.onChangeEmail}
+                name="username"
+                value={this.state.username}
+                onChange={this.onChangeUsername}
                 validations={[required]}
               />
             </div>
@@ -149,5 +150,3 @@ class Login extends Component {
     );
   }
 }
-
-export default Login;

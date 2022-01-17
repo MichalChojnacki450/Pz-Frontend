@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
-import Loader from "../loader/Loader";
-import FirmaCard from "./FirmsCard";
+import Loader from "../Loader/Loader";
+import FirmaCard from "./FirmaCard";
 import {FormControl,Form} from "react-bootstrap";
 
 function Firms(){
@@ -13,9 +13,8 @@ function Firms(){
     })
     const [searchTerm,setSearchTerm]= useState("");
 
-    
     let content = null
-    
+
     useEffect(()=>{
         setFirms({
             loading: true,
@@ -51,11 +50,17 @@ function Firms(){
     if(firms.data){
         content=
         firms.data.filter((val)=>{
+
+            
             if(searchTerm ===""){
                 return val
             }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
                 return val
-            }else if(val.favors.toLowerCase().includes(searchTerm.toLowerCase())){
+            }else {                
+                // const firma = val.favor.filter(favor=>favor.includes(searchTerm.toLowerCase())).map((filteredFavor)=>{
+                //     return val
+                // })
+                // console.log(firma)
                 return val
             }
         }).map((firma,key)=>

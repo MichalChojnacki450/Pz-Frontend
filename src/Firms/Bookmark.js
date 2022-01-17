@@ -1,68 +1,72 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
-import Loader from "../loader/Loader";
-import FirmaCard from "./FirmsCard";
+import Loader from "../Loader/Loader";
+import FirmaCard from "./FirmaCard";
 import {FormControl,Form} from "react-bootstrap";
 
-function Favors(){
+function Firms(){
     const url=`https://61d83e5de6744d0017ba89f0.mockapi.io/FirmsList/Firms`
-    const [favors,setfavors]=useState({
+    const [firms,setFirms]=useState({
         loading: false,
         data: null,
         error: false
     })
     const [searchTerm,setSearchTerm]= useState("");
 
-    
     let content = null
-    
+
     useEffect(()=>{
-        setfavors({
+        setFirms({
             loading: true,
             data: null,
             error: false
         })
         axios.get(url)
         .then(response=>{
-            setfavors({
+            setFirms({
                 loading: false,
                 data: response.data,
                 error: false    
             })
         })
         .catch(()=>{
-            setfavors({
+            setFirms({
                 loading:false,
                 data: null,
                 error: true
             })
         })
     },[url])
-    
-    if(favors.error){
+    if(firms.error){
         content=
         <p>Ther was an error please refresh or try agan later...</p>
     }
 
-    if(favors.loading){
+    if(firms.loading){
         content =<p><Loader></Loader></p>
     }
-    if(favors.data){
+
+    if(firms.data){
+
+
         content=
-        favors.data.filter((val)=>{
+        firms.data.filter((val)=>{
             if(searchTerm ===""){
+                return val
+            }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
                 return val
             }else if(val.favors.toLowerCase().includes(searchTerm.toLowerCase())){
                 return val
             }
-        }).map((favor,key)=>
+        }).map((firma,key)=>
             <div>
                 <FirmaCard
-                    favor={favor}
+                    firma={firma}
                 />
             </div>
         )
     }
+    
     return(
         <div>
             <Form className="d-flex">
@@ -76,8 +80,8 @@ function Favors(){
                 }}
                 />
             </Form>
-            {content}
+            {/* {content} */}
         </div>
     )
 }
-export default Favors;
+export default Firms;
