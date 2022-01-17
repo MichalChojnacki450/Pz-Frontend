@@ -1,42 +1,15 @@
-import React,{useState,useEffect} from "react";
-import axios from "axios";
+import React,{useState} from "react";
 import Loader from "../Loader/Loader";
 import FirmaCard from "./FirmaCard";
 import {FormControl,Form} from "react-bootstrap";
-
+import {useAxiosGet} from "../Hooks/HttpRequests"
+import App from "../App.css"
 function Firms(){
     const url=`https://61d83e5de6744d0017ba89f0.mockapi.io/FirmsList/Firms`
-    const [firms,setFirms]=useState({
-        loading: false,
-        data: null,
-        error: false
-    })
+
     const [searchTerm,setSearchTerm]= useState("");
-
+    let firms = useAxiosGet(url)
     let content = null
-
-    useEffect(()=>{
-        setFirms({
-            loading: true,
-            data: null,
-            error: false
-        })
-        axios.get(url)
-        .then(response=>{
-            setFirms({
-                loading: false,
-                data: response.data,
-                error: false    
-            })
-        })
-        .catch(()=>{
-            setFirms({
-                loading:false,
-                data: null,
-                error: true
-            })
-        })
-    },[url])
     
     if(firms.error){
         content=
@@ -49,22 +22,17 @@ function Firms(){
 
     if(firms.data){
         content=
-        firms.data.filter((val)=>{
-
-            
+        firms.data.filter((val)=>{  
             if(searchTerm ===""){
                 return val
             }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
                 return val
-            }else {                
-                // const firma = val.favor.filter(favor=>favor.includes(searchTerm.toLowerCase())).map((filteredFavor)=>{
-                //     return val
-                // })
-                // console.log(firma)
-                return val
+            }else if(val.favor.toString().toLowerCase().includes(searchTerm.toLowerCase()))
+            {
+                return val          
             }
         }).map((firma,key)=>
-            <div>
+            <div key={key}>
                 <FirmaCard
                     firma={firma}
                 />
@@ -73,15 +41,13 @@ function Firms(){
     }
     return(
         <div>
-            <Form className="d-flex">
-                <FormControl
+            <Form>
+                <FormControl 
                     type="search"
                     placeholder="Search"
-                    className="me-2"
+                    className="Search-bar"
                     aria-label="Search"
-                    onChange={ event =>{
-                    setSearchTerm(event.target.value);
-                }}
+                    onChange={ event =>{setSearchTerm(event.target.value)}}
                 />
             </Form>
             {content}

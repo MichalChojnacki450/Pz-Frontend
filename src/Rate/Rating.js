@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import {FaStar} from "react-icons/fa"
-import App from "../App.css"
 
 const StarRating = ()=>{
 
@@ -8,7 +7,7 @@ const StarRating = ()=>{
     const[hover,setHover]= useState(null);
 
     return(
-        <div className="tileMe">
+        <div className="starDiv">
             {[...Array(5)].map((star,i)=>{
                 const ratingValue = i+1;
                 return (
@@ -22,6 +21,7 @@ const StarRating = ()=>{
                         />
                         
                         <FaStar 
+                            size={50}
                             className="star" 
                             color={ratingValue <= (hover || rating) ? "#ffc107":"#e4e5e9"}
                             onMouseEnter={()=> setHover(ratingValue)}

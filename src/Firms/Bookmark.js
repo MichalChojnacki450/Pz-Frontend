@@ -59,7 +59,7 @@ function Firms(){
                 return val
             }
         }).map((firma,key)=>
-            <div>
+            <div key={key}>
                 <FirmaCard
                     firma={firma}
                 />
@@ -73,7 +73,7 @@ function Firms(){
                 <FormControl
                     type="search"
                     placeholder="Search"
-                    className="me-2"
+                    className="Search-bar"
                     aria-label="Search"
                     onChange={ event =>{
                     setSearchTerm(event.target.value);

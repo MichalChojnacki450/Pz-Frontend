@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import StarRating from "../Rate/Rating";
+import App from "../App.css"
 
 function FirmaCard(props){
     
     return(
-        <div className="border mb-4 rounded overflow-hidden">
+        <div className="container">
+        <div className="card-container">
             <div className="p-3">
-                <h3 className="font-bold text-xl mb-3">
+                <h3 className="title">
                     {props.firma.name}
                 </h3>
-                <div className="mb-3">
+                <div className="title">
                     {props.firma.description}
                 </div>
-                <div className="mb-3">
+                <div className="title">
                     {props.firma.openHours}
                     {props.firma.openHours}
                     {props.firma.openHours}
@@ -22,16 +23,17 @@ function FirmaCard(props){
                     {props.firma.openHours}
                     {props.firma.openHours}
                 </div>
-                <Link 
-                    to={`/Firms/${props.firma.id}`}
-                    className="bg-blue-400 text-blue p-2 flex justify-center w-full"
-                    >
-                    <button>
-                        View
-                    </button>
-                </Link>
+                <div className="title">
+                    <Link to={`/Firms/${props.firma.id}`}>
+                        <button className="button button1">
+                            View
+                        </button>
+                    
+                    </Link>
+                </div>
             </div>
         </div>
+    </div>
     )
 }
 export default FirmaCard;

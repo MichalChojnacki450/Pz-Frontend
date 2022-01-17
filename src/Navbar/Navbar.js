@@ -16,11 +16,10 @@ import {
   import Register from "../components/register.component";
   import Home from "../components/home.component";
   import Profile from "../components/profile.component";
-  import BoardUser from "../components/board-user.component";
   import BoardModerator from "../components/board-moderator.component";
   import BoardAdmin from "../components/board-admin.component";
   import EventBus from "../common/EventBus";
-
+  import AddFirma from "../Firms/AddFirma"
 
 
 export default class NavbarComp extends Component{
@@ -71,7 +70,7 @@ export default class NavbarComp extends Component{
                 <div>
                     <Navbar bg="dark" variant={"dark"} expand="lg">
                         <Container>
-                            <Navbar.Brand href="#home">Lody Wrocław</Navbar.Brand>
+                            <Navbar.Brand>Lody Wrocław</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
@@ -79,18 +78,20 @@ export default class NavbarComp extends Component{
                                     <Nav.Link as={Link} to={"/Map"}>Mapa</Nav.Link>
                                     <Nav.Link as={Link} to={"/Firms"}>Firmy</Nav.Link>
 
-                                    
                                     {showModeratorBoard &&(
                                         <Nav.Link as={Link} to={"/mod"}>Moderator Board</Nav.Link>
                                     )}
 
                                     {showAdminBoard &&(
-                                        <Nav.Link as={Link} to={"/admin"}>Admin Board</Nav.Link>
-                                    )}
+                                        <>
+                                            <Nav.Link as={Link} to={"/admin"}>Admin Board</Nav.Link>
+                                            <Nav.Link as={Link} to={"/AddFirma"}>AddFirma</Nav.Link>
+                                        </>
+                                        )}
                                     {currentUser &&(
                                         <>
                                             <Nav.Link as={Link} to={"/Ulubione"}>Ulubione</Nav.Link>
-                                            <Nav.Link as={Link} to={"/user"}>User</Nav.Link>
+                                            
                                         </>
                                     )}
                                     {currentUser ?(
@@ -127,6 +128,9 @@ export default class NavbarComp extends Component{
                         <Route path="/Firms">
                             <Firms/>
                         </Route>
+                        <Route path="/AddFirma">
+                            <AddFirma/>
+                        </Route>
                         <Route path="/Ulubione">
                             <Bookmarks/>
                         </Route>
@@ -138,9 +142,6 @@ export default class NavbarComp extends Component{
                         </Route>
                         <Route path="/Profile">
                             <Profile/>
-                        </Route>
-                        <Route path="/user">
-                            <BoardUser/> 
                         </Route>
                         <Route path="/mod">
                             <BoardModerator/>
