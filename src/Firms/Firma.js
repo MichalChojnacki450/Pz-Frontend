@@ -87,14 +87,15 @@ function Firma(){
 
                 <p></p>
             </div>
+            <div>
+                <p>Rating<StarRating/></p>
+            </div>
             <Link>
                 <button onClick={showInMap}>
                     GoogleMap
                 </button>
             </Link>
-            <div>
-                <StarRating/>
-            </div>
+
         </div>
     </div>
     }
